@@ -24,7 +24,7 @@ namespace ConsoleApp8
                 Console.WriteLine("Grade: " + highScores["Shadow"]);
             else
                 Console.WriteLine("Player 'Shadow' has no score yet.");
-            foreach (var pair in highScores)
+            foreach (KeyValuePair<string,int> pair in highScores)
             {
                 Console.WriteLine($" {pair.Key} : {pair.Value}");
             }
@@ -45,7 +45,7 @@ namespace ConsoleApp8
             int i = 0;
             while (true)
             {
-                if (comments[i].Contains("offer") || comments[i].Contains("Bitcoin"))
+                if (i < comments.Count &&  comments[i].Contains("offer") || comments[i].Contains("Bitcoin"))
                     comments.RemoveAt(i);
                 else
                     i++;
